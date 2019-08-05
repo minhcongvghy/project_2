@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<center>
+    <h1>Hãy thử đoán xem</h1>
+    <button onclick="hamChoi()">Chơi</button>
+</center>
+<script>
+    function hamChoi() {
+        let nhap1 = parseInt(prompt('Nhập khoảng muốn chọn từ'));
+        let nhap2 = parseInt(prompt('Đến'));
+        let doan1;
+        let doan2 = Math.floor(Math.random() * (nhap2 - nhap1 + 1) + nhap1);
+        let count = 0;
+        do {
+            doan1 = parseInt(prompt('Nhập số bạn đoán'));
+            if (doan2 == doan1) {
+                alert('Bạn đoán đúng');
+            } else {
+                alert('Bạn nhập sai, số đúng là '+doan2);
+            }
+            count++;
+        } while (doan2 != doan1 && count < 3);
+        if (count == 3) {
+            alert('Bạn đã thua');
+        }
+    }
+</script>
+</body>
+</html>
