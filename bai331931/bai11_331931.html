@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let salary = parseFloat(prompt('Nhập salary (tính theo triệu đồng)'));
+    if (salary <= 5) {
+        let luong = salary - (salary*5)/100;
+        alert('Số tiền sau khi trừ thuế là '+luong +' triệu đồng');
+    } else if (salary <=10) {
+        let luong = salary - (salary*10)/100;
+        alert('Số tiền sau khi trừ thuế là '+luong +' triệu đồng');
+    } else if (salary <=18) {
+        let luong = salary - (salary*15)/100;
+        alert('Số tiền sau khi trừ thuế là '+luong +' triệu đồng');
+    }
+    else if (salary <=32) {
+        let luong = salary - (salary*20)/100;
+        alert('Số tiền sau khi trừ thuế là '+luong +' triệu đồng');
+    }
+    else if (salary <=52) {
+        let luong = salary - (salary*25)/100;
+        alert('Số tiền sau khi trừ thuế là '+luong +' triệu đồng');
+    }
+    else if (salary <=80) {
+        let luong = salary - (salary*30)/100;
+        alert('Số tiền sau khi trừ thuế là '+luong +' triệu đồng');
+    } else {
+        let luong = salary - (salary*35)/100;
+        alert('Số tiền sau khi trừ thuế là '+luong +' triệu đồng');
+    }
+</script>
+</body>
+</html>

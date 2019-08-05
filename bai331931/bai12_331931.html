@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let soTien = parseInt(prompt('Nhập số tiền'));
+    let soThang = parseInt(prompt('Nhập số tháng'));
+    let tongTien = soTien * Math.pow((1 + 0.8 / 100), soThang);
+    alert('Số tiền là ' + tongTien);
+</script>
+</body>
+</html>

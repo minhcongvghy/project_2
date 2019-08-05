@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let so = parseInt(prompt('Nhập số điện'));
+    if (soDien <= 50) {
+        let soTien = soDien * 1000;
+        alert('Số tiền phải trả là ' + soTien);
+    } else if (soDien <= 100) {
+        let soTien = 50 * 1000 + (soDien - 50) * 2000;
+        alert('Số tiền phải trả là ' + soTien);
+    } else {
+        let soTien = 50 * 1000 + 50 * 2000 + (soDien - 100) * 3000;
+        alert('Số tiền phải trả là ' + soTien);
+    }
+</script>
+</body>
+</html>
