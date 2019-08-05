@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="text" id="search">
+<button onclick="vietSub()">VietSub</button>
+<script>
+    function vietSub() {
+        let text2 = '';
+        let text1 = document.getElementById("search").value;
+        let engLishArray = ['blue', 'red', 'black', 'white'];
+        let vietArray = ['màu xanh', 'màu đỏ', 'màu đen', 'màu trắng'];
+        for (let i = 0; i < engLishArray.length; i++) {
+            if (text1 == engLishArray[i]) {
+                document.write(vietArray[i]);
+                break;
+            } else {
+                if (i == engLishArray.length - 1) {
+                    document.write('No find');
+                }
+            }
+        }
+    }
+</script>
+</body>
+</html>
