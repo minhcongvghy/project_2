@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let soPhut = parseInt(prompt('Nhập số phút gọi'));
+    let soTien;
+    if (soPhut <= 10) {
+        soTien = soPhut * 1000;
+        alert('Số tiền phải trả là ' + soTien);
+    } else if (soPhut <= 30) {
+        soTien = 10 * 1000 + (soPhut - 10) * 2000;
+        alert('Số tiền phải trả là ' + soTien);
+    } else {
+        soTien = 10 * 1000 + 20 * 2000 + (soPhut - 30) * 3000;
+        alert('Số tiền phải trả là ' + soTien);
+    }
+</script>
+</body>
+</html>
