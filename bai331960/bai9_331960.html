@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let arrayA = [], arrayB = [], arrayC = [];
+    alert('Nhập mảng A')
+    for (let i = 0; i < 10; i++) {
+        arrayA[i] = parseInt(prompt('Phần tử thứ ' + [i]));
+    }
+    alert('Nhập mảng B')
+    for (let i = 0; i < 10; i++) {
+        arrayB[i] = parseInt(prompt('Phần tử thứ ' + [i]));
+    }
+    arrayC = arrayA.concat(arrayB);
+    document.write(arrayC);
+</script>
+</body>
+</html>

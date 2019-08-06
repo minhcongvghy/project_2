@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let intArray = [];
+    let check = false;
+    for (let i = 0; i < 10; i++) {
+        intArray[i] = parseInt(prompt('Phần tử thứ ' + [i]));
+    }
+    let intV = parseInt(prompt('Nhập 1 số nguyên bất kỳ'));
+    for (let j = 0; j < intArray.length; j++) {
+        if (intV == intArray[j]) {
+            document.write('V is in the array');
+            check = true;
+        }
+    }
+    if (check == false) {
+        document.write('V is not in the array');
+    }
+</script>
+</body>
+</html>

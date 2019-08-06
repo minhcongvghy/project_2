@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let intArray = [];
+    for (let i = 0; i < 10; i++) {
+        intArray[i] = parseInt(prompt('Phần tử thứ ' + [i]));
+    }
+    intArray.sort(function (a, b) {
+        return b - a;
+    })
+    document.write(intArray);
+</script>
+</body>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let count = 0;
+    let str = prompt('Nhập vào chuỗi');
+    let result = [str[0]];
+    for (let x = 0; x < str.length; x++) {
+        if ((str[x] == 'u') || (str[x] == 'e') || (str[x] == 'o') || (str[x] == 'a') ||
+            (str[x] == 'i') || (str[x] == 'U') || (str[x] == 'E') || (str[x] == 'O') ||
+            (str[x] == 'A') || (str[x] == 'I') ) {
+            count++;
+        }
+    }
+    document.write('Số nguyên âm trong chuỗi là ' + count);
+</script>
+</body>
+</html>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let intArray = [1, 2, 3, 4, 5, 6, 7, 8, 19, 10];
+    let count = 0;
+    let max = intArray[0];
+    for (let i = 0; i < intArray.length; i++) {
+        if (intArray[i] > max) {
+            max = intArray[i];
+            count = i;
+        }
+    }
+    document.write('Số ' + max + ' lớn nhất tại vị trí ' + count);
+</script>
+</body>
+</html>
