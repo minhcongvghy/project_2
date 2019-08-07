@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let input = parseInt(prompt('Nhập số phần tử của mảng'));
+    let intArray = [];
+    for (let i = 0; i < input; i++) {
+        intArray[i] = prompt('Phần tử thứ ' + i);
+    }
+    document.write(intArray.reverse().join(''));
+</script>
+</body>
+</html>

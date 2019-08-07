@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let input = parseInt(prompt('Nhập số phần tử của mảng'));
+    let charArray = [];
+    for (let i = 0; i < input; i++) {
+        charArray[i] = prompt('Phần tử thứ ' + i);
+    }
+    let result = (charArray.join()).replace(/-/g, '_');
+    document.write(result);
+</script>
+</body>
+</html>

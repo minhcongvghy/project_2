@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let count = 0;
+    let str1 = prompt('Nhập chuỗi thứ nhất');
+    let result1 = [str1[0]];
+    let str2 = prompt('Nhập chuỗi thứ hai');
+    let result2 = [str2[0]];
+    if (str1.length != str2.length) {
+        document.write('Hai chuỗi khác nhau');
+    } else {
+        for (let j = 0; j < str1.length; j++) {
+            if (str1[j] == str2[j]) {
+                count++;
+            }
+        }
+        if (count == str1.length) {
+            document.write('Hai chuỗi giống nhau');
+        } else {
+            document.write('Hai chuỗi khác nhau');
+        }
+    }
+</script>
+</body>
+</html>
