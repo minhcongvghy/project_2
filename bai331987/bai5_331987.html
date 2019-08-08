@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let input = prompt('Search');
+    let array1 = ['Polaris', 'Aldebaran', 'Deneb', 'Vega', 'Altair', 'Dubhe','Regulus'];
+    let array2 = ['Ursa Minor', 'Tarurus', 'Cygnus', 'Lyra', 'Aquila', 'Ursa Major','Leo'];
+    function search(star) {
+        for (let i = 0; i < array1.length; i++) {
+            if (star == array1[i]) {
+                return array2[i];
+            } else {
+                return 'No find';
+            }
+        }
+    }
+    document.write(search(input));
+</script>
+</body>
+</html>
