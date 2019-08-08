@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let input = parseInt(prompt('Nhập số phần tử của mảng'));
+    function reverseArray(number) {
+        let emptyArray = [];
+        for (let i = 0; i < number; i++) {
+            emptyArray[i] = parseInt(prompt('Phần tử thứ ' + i));
+        }
+        return emptyArray.reverse();
+    }
+    document.write(reverseArray(input));
+</script>
+</body>
+</html>

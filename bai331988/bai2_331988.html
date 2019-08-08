@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let radius = parseFloat(prompt('Radius'));
+
+    function circleArea(radius) {
+        return radius * radius * Math.PI;
+    }
+
+    function perimeterCircle(radius) {
+        return radius * 2 * Math.PI;
+    }
+
+    document.write('Diện tích hình tròn = ' + circleArea(radius) + '<br>');
+    document.write('Chu vi hình tròn = ' + perimeterCircle(radius));
+</script>
+</body>
+</html>

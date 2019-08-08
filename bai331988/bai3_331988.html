@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let numbers = parseInt(prompt('Number'));
+
+    function factorial(number) {
+        let multi = 1;
+        for (let i = 1; i <= number; i++) {
+            multi *= i;
+        }
+        return multi;
+    }
+
+    document.write(numbers + '! = ' + factorial(numbers));
+</script>
+</body>
+</html>
