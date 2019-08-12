@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let input = parseInt(prompt('Enter a number'));
+
+    function isPrime(number) {
+        let check = true;
+        if (number < 2) {
+            check = false;
+        } else {
+            for (let i = 2; i < number - 1; i++) {
+                if (number % i == 0) {
+                    check = false;
+                    break;
+                }
+            }
+        }
+        return check;
+    }
+
+    let result = isPrime(input);
+    if (result == false) {
+        document.write('False');
+    } else {
+        document.write('True');
+    }
+</script>
+</body>
+</html>

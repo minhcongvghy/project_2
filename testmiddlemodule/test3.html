@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let twoArray = [
+        [1, 2, 3],
+        [3, 4, 5],
+        [6, 7, 8]
+    ];
+
+    function sumDiagonal() {
+        let sum = 0;
+        for (let i = 0; i < twoArray.length; i++) {
+            for (let j = 0; j < twoArray.length; j++) {
+                if (i == j) {
+                    sum += twoArray[i][j];
+                }
+            }
+        }
+        return sum;
+    }
+
+    document.write(sumDiagonal());
+</script>
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let input = parseInt(prompt('Nhập độ dài mảng'));
+    let intArray = [];
+    let newArray = [];
+    for (let i = 0; i < input; i++) {
+        intArray[i] = parseInt(prompt('PHần tử thứ ' + i));
+    }
+    for (let j = 0; j < intArray.length; j++) {
+        if (isPrime(intArray[j])) {
+            newArray.push(intArray[j]);
+        }
+    }
+    document.write(newArray);
+
+    function isPrime(number) {
+        let check = true;
+        if (number < 2) {
+            check = false;
+        } else {
+            for (let i = 2; i < number - 1; i++) {
+                if (number % i == 0) {
+                    check = false;
+                    break;
+                }
+            }
+        }
+        return check;
+    }
+
+</script>
+</body>
+</html>
