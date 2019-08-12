@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+<style>
+    input {
+        background-color: lightgrey;
+        width: 200px;
+        border: 5px solid greenyellow;
+        padding: 20px;
+        margin: 10px;
+    }
+    h1 {text-shadow: 4px 3px red;}
+    .button {
+        display: inline-block;
+        padding: 15px 25px;
+        font-size: 14px;
+        cursor: pointer;
+        text-align: center;
+        text-decoration: none;
+        outline: none;
+        color: #fff;
+        background-color: #4CAF50;
+        border: none;
+        border-radius: 15px;
+        box-shadow: 0 9px #999;
+    }
+
+    .button:hover {background-color: #3e8e41}
+
+    .button:active {
+        background-color: #3e8e41;
+        box-shadow: 0 5px #666;
+        transform: translateY(4px);
+    }
+</style>
+    <center>
+        <h1 >MANAGEMENT APPLICATION</h1>
+        <input type="text" id="textValue">
+        <button class="button" id="add" onclick="addProduct()">ADD</button>
+        <button class="button" id="display" onclick="displayProduct()">DISPLAY</button>
+        <button class="button" id="edit" onclick="editProduct()">EDIT</button>
+        <button class="button" id="delete" onclick="deleteProduct()">DELETE</button>
+        <div id="result"></div>
+    </center>
+</head>
+<body>
+<script>
+    let productArray = [];
+    let x = 1;
+    let y = 0;
+
+    function addProduct() {
+        productArray[x] = document.getElementById("textValue").value;
+        x++;
+        alert("Success!");
+        document.getElementById("textValue").value = "";
+    }
+
+    function displayProduct() {
+        let e = "";
+        for (let i = 1; i < productArray.length; i++) {
+            e += "Product " + i + ": " + productArray[i] + "<br/>";
+        }
+        document.getElementById("result").innerHTML = e;
+    }
+
+    function editProduct() {
+        let selectProduct = parseInt(prompt("Numerical order product:"));
+        if (selectProduct < productArray.length) {
+            productArray[selectProduct] = prompt("New name:");
+            productArray[y] = document.getElementById("textValue").value;
+            alert("Edit success!")
+        } else {
+            alert("Product not on the list!");
+        }
+    }
+
+    function deleteProduct() {
+        let selectProduct = parseInt(prompt("Numerical order product: "));
+        if (selectProduct < productArray.length) {
+            productArray.splice(selectProduct, 1);
+            alert("Delete success!");
+        } else {
+            alert("Product not on the list!");
+        }
+    }
+</script>
+</body>
+</html>
