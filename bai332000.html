@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let Temperature = function (degreeC) {
+        this.degreeC = degreeC;
+        this.getDegreeC = function () {
+            return this.degreeC;
+        }
+        this.getDegreeF = function () {
+            return (this.degreeC * 1.8) + 32;
+        }
+        this.getDegreeK = function () {
+            return this.degreeC + 273.15;
+        }
+    }
+    let temperature = new Temperature(25);
+    let degreeF = temperature.getDegreeF();
+    let degreeK = temperature.getDegreeK();
+    alert("degreeF = " + degreeF + "\ndegreeK = " + degreeK);
+</script>
+</body>
+</html>
