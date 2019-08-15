@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    document.write('<table border="0">');
+    for (k=1;k<=15;k++) {
+        document.write('<tr>');
+        for (i=1;i<=50;i++) {
+            if (i==1 || i==50 || k==1 || k==15) {
+                document.write('<td>');
+                document.write('*');
+                document.write('</td>');
+            } else {
+                document.write('<td>');
+                document.write(' ');
+                document.write('</td>');
+            }
+        }
+        document.write('</tr>');
+    }
+    document.write('</table>');
+</script>
+</body>
+</html>
