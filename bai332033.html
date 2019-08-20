@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    //Date
+    let a = new Date();
+    let b = new Date(1995, 10, 28);
+    let c = a - b;
+    console.log('Tôi đã sống ' + Math.round(c / 1000 / 60 / 60 / 24 / 365) + ' năm' + '<br>');
+    console.log('Tôi đã sống ' + Math.round(c / 1000 / 60 / 60 / 24 / 365 * 12) + ' tháng' + '<br>');
+    console.log('Tôi đã sống ' + Math.round(c / 1000 / 60 / 60 / 24) + ' ngày' + '<br>');
+    console.log('Tôi đã sống ' + Math.round(c / 1000 / 60 / 60) + ' giờ' + '<br>');
+    console.log('Tôi đã sống ' + Math.round(c / 1000 / 60) + ' phút' + '<br>');
+    console.log('Tôi đã sống ' + (c + ' giây'));
+
+    //Math
+    console.log(Math.floor(Math.random() * 11));
+    console.log(Math.floor(Math.random() * 401));
+    console.log(Math.floor(Math.random() * 51 + 50));
+    console.log(Math.min(5, 7, 2, 9));
+    console.log(Math.pow(Math.min(5, 7, 2, 9), 53));
+    console.log(5 * 5 * Math.PI);
+
+    //String
+    let str = 'Tôi yêu ngôn ngữ lập trình Javascript';
+    let count = 0;
+    for (let i = 0; i < str.length; i++) {
+        if (str[i] == 'a') {
+            count++;
+        }
+    }
+    console.log('Số lần xuất hiện chữ a là ' + count);
+    let arr = str.split(" ");
+    console.log(arr);
+    console.log('Số lượng từ là ' + arr.length);
+    console.log(str.replace("Javascript", "Typescript"));
+</script>
+</body>
+</html>
