@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    const DEAD = false;
+    const LIVING = true;
+    let Rat = function (name, weight, speed) {
+        this.name = name;
+        this.weight = weight;
+        this.speed = speed;
+        this.status = LIVING;
+        this.say = function (say) {
+            console.log(say);
+        }
+        this.getWeight = function () {
+            return this.weight;
+        }
+        this.setWeight = function (weight) {
+            this.weight = weight;
+        }
+    }
+    let Cat = function (name, weight, speed) {
+        this.name = name;
+        this.weight = weight;
+        this.speed = speed;
+        this.status = LIVING;
+        this.say = function (say) {
+            console.log(say);
+        }
+        this.getWeight = function () {
+            return this.weight;
+        }
+        this.setWeight = function (weight) {
+            this.weight = weight;
+        }
+        this.catchRat = function (mouse) {
+            if (this.speed > mouse.speed) {
+                console.log('Cat catch Rat');
+                return LIVING;
+            } else return DEAD;
+        }
+        this.eat = function (mouse) {
+            if (this.catchRat(mouse)) {
+                this.weight++;
+                mouse.weight--;
+            }
+            if (mouse.weight == 0) {
+                console.log('Finish');
+            }
+        }
+    }
+    let mouse = new Rat('mouse', 5, 10);
+    let cat = new Cat('cat', 50, 20);
+    console.log('Weight mouse = '+ mouse.getWeight());
+    mouse.say('Hello');
+    console.log('Weight cat = '+ cat.getWeight());
+    cat.say('Hi');
+    cat.catchRat(mouse);
+    cat.eat(mouse);
+    cat.eat(mouse);
+    cat.eat(mouse);
+    cat.eat(mouse);
+    cat.eat(mouse);
+    console.log('Weight mouse = '+ mouse.getWeight());
+    console.log('Weight cat = '+ cat.getWeight());
+
+</script>
+</body>
+</html>
