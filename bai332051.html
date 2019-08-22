@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let arr = [];
+    for (let i = 1; i < 5; i++) {
+        let input = prompt('Phone number '+i);
+        arr.push(input);
+    }
+    function checkPhoneNumber(number) {
+        regexp = /^[0]([9][6-8][0-9]{7}|[3][2-9][0-9]{7}|[8][6][0-9]{7})$/;
+        if (regexp.test(number)) {
+            return true;
+        }
+        return false;
+    }
+    for (let i = 0; i < arr.length; i++) {
+        if (checkPhoneNumber(arr[i])) {
+            document.write('Phone number viettel: ' +arr[i] + '<br>');
+        }
+    }
+</script>
+</body>
+</html>

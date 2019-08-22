@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!--<h2>GUESS THE NUMBER</h2>-->
+<!--<input id="input" type="number">-->
+<!--<button>CHECK</button>-->
+<script>
+    let arr = [];
+    for (let i = 1; i <= 100; i++) {
+        arr.push(i);
+    }
+    let answer = arr[Math.floor(Math.random() * arr.length)];
+    let input;
+    do {
+        input = parseInt(prompt("Guess a number"));
+            if (input == answer) {
+                alert("Correct");
+            } else if (input > answer) {
+                alert('Too high');
+            } else {
+                alert('Too low');
+            }
+    } while (input != answer);
+</script>
+</body>
+</html>
