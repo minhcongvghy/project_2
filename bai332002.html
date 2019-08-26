@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        * { margin:0; padding:0; } /* to remove the top and left whitespace */
+        html, body { width:100%; height:100%; } /* just to be sure these are full screen*/
+        canvas { display:block; } /* To remove the scrollbars */
+    </style>
+</head>
+<body>
+
+<canvas id="game" style="border:2px solid blue;"></canvas>
+
+<script>
+    let Car = function() {
+        this.x = 0;
+        this.y = 0;
+        this.speed = 10;
+        this.setPosition = function (x, y) {
+            this.x = x;
+            this.y = y;
+        };
+        this.setCarImage = function (carImage) {
+            this.carImage = carImage;
+        };
+        this.moveLeft = function () {
+            this.x -= this.speed;
+        };
+        this.moveRight = function () {
+            this.x += this.speed;
+        };
+        this.draw = function (context) {
+            context.drawImage(this.carImage, this.x, this.y);
+        };
+    };
+    let Circle = function(x, y) {
+        this.x = x;
+        this.y = y;
+        this.radius = 20;
+        this.speed = 10;
+        this.moveDown = function () {
+            this.y += this.speed;
+        };
+        this.draw = function (context) {
+            context.arc(this.x, this.y, this.radius, 0, 2  * Math.PI);
+            context.fill();
+        };
+    };
+    const canvas = document.getElementById("game");
+    canvas.width = window.innerWidth - 4;
+    canvas.height = window.innerHeight - 4;
+    const context = canvas.getContext("2d");
+    const randomX = Math.random() * canvas.width;
+    const car = new Car();
+    const trap1 = new Circle(randomX, 0);
+    let isPaused = true;
+    let gameHandler;
+    function showHelp() {
+        context.font = "30px Arial";
+        context.textAlign = "center";
+        context.fillText("Bấm phím CÁCH để bắt đầu hoặc dừng chơi!", canvas.width / 2, canvas.height / 2);
+    }
+    function init() {
+        const carImage = new Image();
+        carImage.src = './car-mini.png';
+        carImage.onload = function () {
+            const context = canvas.getContext("2d");
+            context.drawImage(carImage, -carImage.width, -carImage.height); // hide image
+            const DEFAULT_X = canvas.width / 2 - carImage.width / 2;
+            const DEFAULT_Y = canvas.height - carImage.height;
+            car.setPosition(DEFAULT_X, DEFAULT_Y);
+            car.setCarImage(carImage)
+        };
+        showHelp();
+    }
+    function play() {
+        isPaused = false;
+        gameHandler = setInterval(function () {
+            trap1.moveDown();
+            context.beginPath();
+            context.clearRect(0, 0, canvas.offsetWidth, canvas.offsetHeight);
+            trap1.draw(context);
+            car.draw(context);
+        }, 50);
+    }
+    function pause() {
+        isPaused = true;
+        clearInterval(gameHandler);
+        showHelp();
+    }
+    function toggle() {
+        if (isPaused) {
+            play();
+        } else {
+            pause();
+        }
+    }
+    window.onload = init;
+    window.addEventListener("keypress", function(event) {
+        const pressedKey = event.key.toLowerCase();
+        switch (pressedKey) {
+            case 'a':
+                car.moveLeft();
+                break;
+            case 'd':
+                car.moveRight();
+                break;
+            case ' ':
+                toggle();
+                break;
+        }
+    });
+</script>
+
+</body>
+</html>

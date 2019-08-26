@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let Remote = function (code) {
+        this.code = code;
+        this.turnOn = function (tivi) {
+            console.log('Remote:turnOn', this.code, tivi.code);
+            if (this.code == tivi.code) {
+                console.log('Remote:turnOn this.code == tivi.code');
+                tivi.turnTivi(true);
+                tivi.trueCode(this);
+            }
+        };
+        this.turnOff = function (tivi) {
+            if (this.code == tivi.code) {
+                tivi.getStatus(fasle);
+            }
+        };
+        this.changeChannel = function (number, tivi) {
+            if (this.code == tivi.code) {
+                tivi.changeChannel(number);
+            }
+        };
+        this.increaseVolume = function (tivi) {
+            if (this.code == tivi.code) {
+                tivi.increaseVolume();
+            }
+        };
+        this.decreaseVolume = function (tivi) {
+            if (this.code == tivi.code) {
+                tivi.decreaseVolume();
+            }
+        };
+    };
+    let Tivi = function (code) {
+        this.code = code;
+        this.turnOn = false;
+        this.nowChannel = [];
+        this.volume = 50;
+        this.truecode = false;
+        this.turnTivi = function (status) {
+            console.log('Tivi:turnTivi', status);
+            this.turnOn = status;
+        };
+        this.trueCode = function () {
+            this.truecode = true;
+        };
+        this.changeChannel = function (number) {
+            if (this.truecode == true && this.turnOn == true) {
+                this.nowChannel.push(number);
+            }
+        };
+        this.increaseVolume = function () {
+            if (this.truecode == true && this.turnOn == true) {
+                if (this.volume < 100) {
+                    this.volume++;
+                }
+            }
+        };
+        this.decreaseVolume = function () {
+            if (this.truecode == true && this.turnOn == true) {
+                if (this.volume > 0) {
+                    this.volume--;
+                }
+            }
+        };
+        this.getNowChannel = function () {
+            if (this.turnOn == true) {
+                return this.nowChannel;
+            }
+        };
+        this.getVolume = function () {
+            if (this.turnOn == true) {
+                return this.volume;
+            }
+        };
+        this.getStatus = function () {
+            if (this.turnOn == true) {
+                return this.turnOn;
+            }
+        }
+    };
+    let remote = new Remote("TCL");
+    let tiviTCL = new Tivi("TCL");
+    let nowchannel = tiviTCL.getNowChannel();
+    let getstatustivi = tiviTCL.getStatus();
+    let getvolumetivi = tiviTCL.getVolume();
+    remote.turnOn(tiviTCL);
+    getstatustivi = tiviTCL.getStatus();
+    console.log(getstatustivi);
+    remote.changeChannel(7, tiviTCL);
+    nowchannel = tiviTCL.getNowChannel();
+    console.log("Now channel: " + nowchannel);
+    remote.increaseVolume(tiviTCL);
+    getvolumetivi = tiviTCL.getVolume();
+    console.log("Now Volume: " + getvolumetivi);
+    remote.decreaseVolume(tiviTCL);
+    getvolumetivi = tiviTCL.getVolume();
+    console.log("Now Volume: " + getvolumetivi);
+</script>
+</body>
+</html>
