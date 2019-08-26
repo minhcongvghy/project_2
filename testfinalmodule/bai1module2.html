@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let input = prompt("Nhập số phần tử của mảng");
+    let arr = [];
+    for (let i = 0; i < input; i++) {
+        arr[i] = parseInt(prompt("Phần tử thứ " + i));
+    }
+    let max = arr[0];
+
+    function findMaxScore() {
+        for (let i = 0; i < arr.length; i++) {
+            if (arr[i] > max) {
+                max = arr[i];
+            }
+        }
+        return max;
+    }
+
+    findMaxScore(input);
+    document.write("Giá trị cao nhất là " + max);
+</script>
+</body>
+</html>

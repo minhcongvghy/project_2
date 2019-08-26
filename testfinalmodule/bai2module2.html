@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let input = prompt("Nhập số phần tử của mảng");
+    let arr = [];
+    for (let i = 0; i < input; i++) {
+        arr[i] = parseInt(prompt("Phần tử thứ " + i));
+    }
+    let number = parseInt(prompt("Nhập vào 1 số bất kì "));
+    let newArr = [];
+    function tryRemoveFromArray() {
+        for (let i = 0; i < arr.length; i++) {
+            if (arr[i] != number) {
+                newArr.push(arr[i]);
+            }
+        }
+        return newArr;
+    }
+    tryRemoveFromArray(input);
+    document.write(newArr);
+</script>
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let input = parseInt(prompt("Nhập vào một số"));
+    let arr = [];
+
+    function printFibonacci() {
+        let a = 0, b = 1, temp = 0;
+        for (let i = 0; i < input; i++) {
+            a = b;
+            b = temp;
+            temp = a + b;
+            if (temp < input) {
+                arr.push(temp);
+            }
+        }
+    }
+
+    printFibonacci(input);
+    document.write(arr);
+</script>
+</body>
+</html>
